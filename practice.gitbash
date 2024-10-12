@@ -1,0 +1,80 @@
+2. **Configuration**: Set your global username and email with Git.
+
+git config --global user.name "Your name"
+git config --global user.email "your_email@example.com"
+
+3. **Initialization:**
+    - Create a new folder named `GitAdventure`.
+    - Inside `GitAdventure`, initialize a new Git repository.
+    - Open this folder with your terminal or Git Bash using Windows.
+
+cd path to the folder example: 
+cd /c/Users/name/Desktop/GitAdventure
+git init
+
+4. **Staging and Committing:**
+    - Create a text file named `journey.txt` with the content: "Embarking on my journey to master Git."
+    - Use `git status` to see the repository's status.
+    - Stage `journey.txt`.
+    - Commit your changes.
+
+echo "Embarking on my journey to master Git" > journey.txt
+git status
+git add journey.txt
+git commit -m "journey"
+
+5. **Deletion:**
+    - Before deleting, ensure the file to be deleted is first committed. Create a text file named `temp.txt` with the content: "This file is meant to be deleted." Then, stage and commit.
+    - Delete `temp.txt` using Git's deletion command.
+
+echo "This file is meant to be deleted" > temp.txt 
+git add temp.txt
+git commit -m "remove file"
+git rm temp.txt
+git commit -m "deleting temp.txt"
+(Just to make sure)
+git add .
+git commit -m "up to date" 
+
+6. **Renaming:**
+    - Rename `journey.txt` to `adventure.txt`.
+    - Update its content to: "My journey evolves into an adventure with Git."
+    - Stage and commit your changes.
+
+mv journey.txt adventure.text
+echo "My journey evolves into an adventure with Git" > adventure.txt
+git add adventure.txt
+git commit -m "adventure"
+
+7. **Ignoring Files:**
+    - Create a `.gitignore` file to ignore all files ending with `.log`. Stage and commit.
+    - Verify that they are being ignored by creating a dummy .log file and checking that it doesn't appear in the `git status`.
+
+echo "*.log" > .gitignore
+git add .gitignore
+git commit -m "log ignore"
+touch dummy.log
+git status
+(the status should not return nothing since dummy.log is being ignore)
+
+8. **Diving Deeper:**
+    - Change `adventure.txt` to add "Exploring the depths of Git commands and their powers."
+    - Use Git for a concise status overview.
+    - Stage and commit your changes.
+
+echo "Exploring the depths of Git commands and their powers" > adventure.txt
+git status
+git add adventure.txt
+git commit -m "new adventure"
+
+
+9. **History and Restoration**:
+    - Explore your commit history.
+    - Revert `adventure.txt` to its initial state.
+
+git log
+git revert <initial-commit-hash> 
+(replace <initial-commit-hash> with the actual hash you have)
+Example : 
+git revert abcdef1234568890
+
